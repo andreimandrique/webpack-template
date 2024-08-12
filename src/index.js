@@ -1,10 +1,17 @@
+if (process.env.NODE_ENV !== "production") {
+  console.log("Looks like we are in development mode!");
+}
+
 import { hello } from "./hello";
 import "./style.css";
-import myPic from "./haruhiro.jpg";
+import cosmic from "./cosmic expression.jpg";
 
-const myProfilePic = document.getElementById("myProfilePic");
-const h1 = document.querySelector("h1");
+const imageContainer = document.querySelector(".img-container");
 
-myProfilePic.src = myPic;
+const img = document.createElement("img");
+img.src = cosmic;
+img.classList.add("img-style");
 
-h1.innerText = hello();
+imageContainer.append(img);
+
+console.log(hello());
